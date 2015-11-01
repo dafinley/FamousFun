@@ -1,0 +1,78 @@
+{
+  "name": "famous-framework",
+  "version": "0.12.1",
+  "description": "A modern take on building reusable components and maintainable applications",
+  "keywords": [
+    "famous",
+    "framework"
+  ],
+  "license": "MIT",
+  "repository": "Famous/framework",
+  "bugs": "https://github.com/Famous/framework/issues",
+  "main": "lib/index.js",
+  "authors": [
+    "Zack Brown <zack@famo.us>",
+    "Matthew Trost <matthew@famo.us>",
+    "Arkady Pevzner <arkady@famo.us>",
+    "Imtiaz Majeed <imtiaz@famo.us>",
+    "Jordan Papaleo <jordan@famo.us>",
+    "Larry Gordon <lg@famo.us>"
+  ],
+  "bin": {
+    "famous-framework": "bin/famous-framework.js"
+  },
+  "browser": {
+    "jsdom": "./dev/build-pipeline/shims/jsdom.js"
+  },
+  "scripts": {
+    "dev": "node bin/famous-framework.js local-only-bootstrap --sourceFolder=lib/core-components --destinationFolder=dev/local-workspace/build --servedFolder=dev/local-workspace --port=1618",
+    "browserify-build-pipeline": "browserify dev/build-pipeline/index.js -t brfs",
+    "test-build-pipeline": "node test/build-pipeline/index.spec.js",
+    "test-runtime": "browserify test/runtime-tests/**/*.spec.js | tap-closer | smokestack",
+    "test-state-manager": "browserify test/state-manager-tests/*.spec.js | tap-closer | smokestack",
+    "test-utilities": "browserify test/utilities-tests/*.spec.js | tap-closer | smokestack",
+    "lint": "eslint --ignore-path .eslintignore ."
+  },
+  "dependencies": {
+    "async": "1.2.1",
+    "babel": "5.5.8",
+    "brfs": "^1.4.0",
+    "browserify": "10.2.4",
+    "chokidar": "1.0.3",
+    "clone": "1.0.2",
+    "commander": "2.8.1",
+    "escodegen": "1.6.1",
+    "esprima": "2.2.0",
+    "estraverse": "4.1.0",
+    "express": "4.12.4",
+    "famous": "Famous/engine#v0.6.2",
+    "jsdom": "3.1.2",
+    "livereload": "0.3.7",
+    "lodash.assign": "^3.2.0",
+    "lodash.clone": "^3.0.2",
+    "lodash.debounce": "^3.1.1",
+    "lodash.defaults": "^3.1.2",
+    "lodash.filter": "^3.1.1",
+    "lodash.find": "^3.2.1",
+    "lodash.first": "^3.0.0",
+    "lodash.foreach": "^3.0.3",
+    "lodash.last": "^3.0.0",
+    "lodash.map": "^3.1.4",
+    "lodash.pairs": "^3.0.1",
+    "lodash.uniq": "^3.2.2",
+    "mkdirp": "0.5.1",
+    "ncp": "2.0.0",
+    "pubsub-js": "^1.5.2",
+    "recursive-readdir": "1.2.1",
+    "rimraf": "^2.4.0",
+    "watchify": "3.2.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "3.1.15",
+    "eslint": "0.23.0",
+    "jsdoc": "3.3.2",
+    "smokestack": "3.3.0",
+    "tap-closer": "1.0.0",
+    "tape": "4.0.0"
+  }
+}

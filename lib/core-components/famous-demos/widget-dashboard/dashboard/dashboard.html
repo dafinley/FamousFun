@@ -1,0 +1,37 @@
+<node class="container">
+
+    <!-- Show/hide the widget list -->
+    <node class="add"></node>
+
+    <!-- Show/hide the widget remove buttons -->
+    <node class="remove"></node>
+
+    <!-- The widget list dropdown -->
+    <node class="available-widgets-list">
+        <node class="widget-list-item"></node>
+    </node>
+
+    <!-- The widget dashboard -->
+    <node class="dashboard">
+        <node class="dashboard-item clock">
+            <node class="remove-dashboard-item"></node>
+            <famous-demos:widget-dashboard:clock></famous-demos:widget-dashboard:clock>
+        </node>
+        <node class="dashboard-item calendar">
+            <node class="remove-dashboard-item"></node>
+            <famous-demos:widget-dashboard:calendar></famous-demos:widget-dashboard:calendar>
+        </node>
+        <node class="dashboard-item weather">
+            <node class="remove-dashboard-item"></node>
+            <famous-demos:widget-dashboard:weather></famous-demos:widget-dashboard:weather>
+        </node>
+        <node class="dashboard-item stocks">
+            <node class="remove-dashboard-item"></node>
+            <famous-demos:widget-dashboard:stocks></famous-demos:widget-dashboard:stocks>
+        </node>
+        <node class="dashboard-item photos">
+            <node class="remove-dashboard-item"></node>
+            <famous-demos:widget-dashboard:photos></famous-demos:widget-dashboard:photos>
+        </node>
+    </node>
+</node>
